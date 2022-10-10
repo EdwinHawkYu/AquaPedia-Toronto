@@ -1,23 +1,38 @@
 import { Component } from 'react';
-import Nav from '../components/Nav/Nav'
 import Footer from '../components/Footer/Footer';
 import PostForm from '../components/PostForm/PostForm';
 import Post from '../components/Post/Post';
+import NavigationBar from '../components/NavigationBar/NavigationBar';
 import {Route, Routes} from 'react-router-dom'
-import './App.css';
 import CourseMenu from '../pages/CourseMenu';
-
+import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 export default class App extends Component {
+
+  state = {
+    posts:[]
+  }
+
+  // getPosts = async () => {
+  //   await fetch('/api')
+  //     .then(res => res.json())
+  //     .then(posts => this.setState({posts}))
+  // }
+
+  // componentDidMount(){
+  //   this.getPosts()
+  // }
+
   render(){
     return (
       <main className="App">
-        <Nav/>
+        <NavigationBar/>
         <h1>Hello</h1>
-        {/* <Routes>
+        <Routes>
           <Route path='/coursemenu' element={<CourseMenu/>}/>
-        </Routes> */}
-        <Post/>
+        </Routes>
+        {this.state.posts.length ? this.state.posts.map(p => <Post/>) : <h2>No Posts!</h2>}
         <PostForm/>
         <Footer/>
       </main>

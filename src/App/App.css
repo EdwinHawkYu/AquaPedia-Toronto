@@ -1,10 +1,18 @@
 .App {
   text-align: center;
+  padding-bottom: 60px;
 }
 
 .App-logo {
   height: 40vmin;
   pointer-events: none;
+}
+
+footer{
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right: 0;
 }
 
 @media (prefers-reduced-motion: no-preference) {

@@ -12,7 +12,8 @@ export default class PostForm extends Component{
     this.setState({[e.target.name]:e.target.value});
   }
 
-  handleSubmit = async () =>{
+  handleSubmit = async (e) =>{
+    e.preventDefault();
     let optionBody = {
       name: this.state.name,
       level: this.state.level,
@@ -29,10 +30,13 @@ export default class PostForm extends Component{
     await fetch('/api', options)
       .then(res => res.json())
       .then(data => {
-        this.props.getPosts()
-        this.setState({})
+        this.setState({
+          name: '',
+          level: '',
+          price: '',
+          date: ''
+        })
       })
-
   }
 
   render(){
@@ -42,31 +46,31 @@ export default class PostForm extends Component{
           <form>
             <label>Name</label>
             <input
-            // type=''
-            // name=''
-            // onChange={this.handleChange}
-            // required
+              type='name'
+              name='name'
+              onChange={this.handleChange}
+              required
             />
             <label>Level</label>
             <input
-            // type=''
-            // name=''
-            // onChange={this.handleChange}
-            // required
+              type='level'
+              name='level'
+              onChange={this.handleChange}
+              required
             />
             <label>Price</label>
             <input
-            // type=''
-            // name=''
-            // onChange={this.handleChange}
-            // required
+              type='price'
+              name='price'
+              onChange={this.handleChange}
+              required
             />
             <label>Date</label>
             <input
-            // type=''
-            // name=''
-            // onChange={this.handleChange}
-            // required
+              type='date'
+              name='date'
+              onChange={this.handleChange}
+              required
             />
             <button onClick={this.handleSubmit}>Add Posting!</button>
           </form>
