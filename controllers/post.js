@@ -6,7 +6,7 @@ module.exports = {
 }
 
 function index(req, res){
-  console.log('Index')
+  console.log('Index - Post')
   Post.find({}, function(err, posts){
     if(err){
       res.status(500).json(err)

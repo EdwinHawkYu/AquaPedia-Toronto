@@ -1,11 +1,26 @@
+import Card from 'react-bootstrap/Card'
+import Button from 'react-bootstrap/Button'
+
 export default function Post(props){
   return(
     <div className="post">
-      <p>{props.name}</p>
-      <p>{props.level}</p>
-      <p>{props.location}</p>
-      <p>{props.price}</p>
-      <p>{props.date}</p>
+      <Card>
+        <Card.Img>
+        </Card.Img>
+        <Card.Body>
+          <Card.Title>
+            {props.post.name}
+          </Card.Title>
+          <Card.Text>
+            Level: {props.post.level}
+            <br/>
+            Price: ${props.post.price}
+            <br/>
+            Date: {props.post.date}
+          </Card.Text>
+          <Button variant='primary'>Registration!</Button>
+        </Card.Body>
+      </Card>
     </div>
   )
 }
