@@ -5,6 +5,7 @@ import NavigationBar from '../components/NavigationBar/NavigationBar';
 import {Route, Routes} from 'react-router-dom'
 import CourseMenu from '../pages/CourseMenu/CourseMenu';
 import AuthPage from '../pages/AuthPage/AuthPage';
+import HomePage from '../pages/HomePage/HomePage';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -45,16 +46,16 @@ export default class App extends Component {
         <NavigationBar user={this.state.user}/>
         { this.state.user ?
         <>
-          <h1>SEI Project 4</h1>
           <Routes>
+            <Route path='' element={<HomePage/>}/>
             <Route path='/coursemenu' element={<CourseMenu posts={this.state.posts}/>}/>
+            <Route path='/addpost' element={<PostForm/>}/>
           </Routes>
-          <PostForm/>
-          <Footer/>
         </>
           :
           <AuthPage setUserInState={this.setUserInState}/>
         }
+        <Footer/>        
       </main>
     );
   }

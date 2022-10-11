@@ -18,18 +18,23 @@ export default function NavigationBar(props) {
             style={{ maxHeight: '100px' }}
             navbarScroll
           >
-            <Nav.Link as={Link} to="/">Home</Nav.Link>
+            <Nav.Link as={Link} to="">Home</Nav.Link>
             <NavDropdown title="Courses" id="navbarScrollingDropdown">
               <NavDropdown.Item as={Link} to="/coursemenu">Show All Courses</NavDropdown.Item>
-              <NavDropdown.Item as={Link} to="">Learn to Swim</NavDropdown.Item>
-              <NavDropdown.Item as={Link} to="">First Aid</NavDropdown.Item>
-              <NavDropdown.Item as={Link} to="">Lifeguarding</NavDropdown.Item>
-              <NavDropdown.Item as={Link} to="">Advanced Leadership Courses</NavDropdown.Item>
+              <NavDropdown.Item as={Link} to="/addpost">Add Course</NavDropdown.Item>
               <NavDropdown.Divider />
-              <NavDropdown.Item href="" disabled>Coming Soon!</NavDropdown.Item>
+              <NavDropdown.Item as={Link} disabled>Coming Soon!</NavDropdown.Item>
+              <NavDropdown.Item as={Link} to="" disabled>Learn to Swim</NavDropdown.Item>
+              <NavDropdown.Item as={Link} to="" disabled>First Aid</NavDropdown.Item>
+              <NavDropdown.Item as={Link} to="" disabled>Lifeguarding</NavDropdown.Item>
+              <NavDropdown.Item as={Link} to="" disabled>Advanced Leadership Courses</NavDropdown.Item>
             </NavDropdown>
-            <Nav.Link href="">Sign Up</Nav.Link>
-            <Nav.Link href="">Login</Nav.Link>
+            <Nav.Link href="">Checkout</Nav.Link>
+            {props.user ?
+              <Nav.Link href="">Logout</Nav.Link>
+              :
+              <Nav.Link href="">Login</Nav.Link>
+            }
           </Nav>
           <Form className="d-flex">
             <Form.Control

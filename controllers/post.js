@@ -2,7 +2,8 @@ const Post = require('../models/Post')
 
 module.exports = {
   index,
-  create
+  create,
+  delete: deletePost,
 }
 
 function index(req, res){
@@ -20,4 +21,16 @@ function create(req, res){
   Post.create(req.body, function(err, post){
     res.status(200).json('ok')
   })
+}
+
+function deletePost(req, res){
+  try{
+    let post = Post.findById({_id:req.params.id})
+    post.remove()
+    post.save(function(err){
+      return res.json(post)
+    })
+  } catch (error){
+    res.status(400).json(error)
+  }
 }

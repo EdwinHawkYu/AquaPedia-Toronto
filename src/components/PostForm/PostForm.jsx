@@ -1,4 +1,7 @@
 import { Component } from "react";
+import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
+import Container from "react-bootstrap/Container";
 
 export default class PostForm extends Component{
   state = {
@@ -42,39 +45,47 @@ export default class PostForm extends Component{
   render(){
     return(
       <div>
-        <div>
-          <form>
-            <label>Name</label>
-            <input
+        <h1>Add a New Post</h1>
+        <Container>
+          <Form>
+            <Form.Group>
+            <Form.Label>Name</Form.Label>
+            <Form.Control
               type='name'
               name='name'
+              placeholder='Name'
+              autoComplete='nope'
               onChange={this.handleChange}
               required
             />
-            <label>Level</label>
-            <input
+            <Form.Label>Level</Form.Label>
+            <Form.Control
               type='level'
               name='level'
+              placeholder='Level'
               onChange={this.handleChange}
               required
             />
-            <label>Price</label>
-            <input
+            <Form.Label>Price</Form.Label>
+            <Form.Control
               type='price'
               name='price'
+              placeholder='Price'
               onChange={this.handleChange}
               required
             />
-            <label>Date</label>
-            <input
+            <Form.Label>Date</Form.Label>
+            <Form.Control
               type='date'
               name='date'
+              placeholder='Date'
               onChange={this.handleChange}
               required
             />
-            <button onClick={this.handleSubmit}>Add Posting!</button>
-          </form>
-        </div>
+            </Form.Group>            
+            <Button className="m-2" onClick={this.handleSubmit}>Add Posting!</Button>
+          </Form>
+        </Container>
       </div>
     )
   }

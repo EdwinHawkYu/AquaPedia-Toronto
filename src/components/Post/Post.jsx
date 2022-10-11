@@ -19,6 +19,7 @@ export default function Post(props){
             Date: {props.post.date}
           </Card.Text>
           <Button variant='primary'>Registration!</Button>
+          <Button className='m-2'>Delete Course</Button>
         </Card.Body>
       </Card>
     </div>
