@@ -1,15 +1,21 @@
 import Card from 'react-bootstrap/Card'
 import Button from 'react-bootstrap/Button'
+import { Link } from 'react-router-dom'
 
 export default function Post(props){
+
+  const link = `/course/${props.post._id}`
+
   return(
     <div className="post">
-      <Card>
+      <Card style={{ width: '24rem' }}>
         <Card.Img>
         </Card.Img>
         <Card.Body>
           <Card.Title>
-            {props.post.name}
+            <Link to={link}>
+              {props.post.name}
+            </Link>
           </Card.Title>
           <Card.Text>
             Level: {props.post.level}
@@ -18,8 +24,7 @@ export default function Post(props){
             <br/>
             Date: {props.post.date}
           </Card.Text>
-          <Button variant='primary'>Registration!</Button>
-          <Button className='m-2'>Delete Course</Button>
+          <Button as={Link} to={link} variant='primary'>Registration!</Button>
         </Card.Body>
       </Card>
     </div>

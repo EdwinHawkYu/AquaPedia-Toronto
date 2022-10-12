@@ -3,7 +3,9 @@ const Post = require('../models/Post')
 module.exports = {
   index,
   create,
+  show,
   delete: deletePost,
+  update
 }
 
 function index(req, res){
@@ -23,14 +25,20 @@ function create(req, res){
   })
 }
 
+function show(req, res){
+  Post.findById(req.params.id, function(err, post){
+    res.json(post).status(200)
+  })
+}
+
 function deletePost(req, res){
-  try{
-    let post = Post.findById({_id:req.params.id})
-    post.remove()
-    post.save(function(err){
-      return res.json(post)
-    })
-  } catch (error){
-    res.status(400).json(error)
-  }
+  console.log('Finding and trying to delete')
+  Post.findByIdAndRemove(req.params.id).exec()
+  res.json('Item Deleted')
+}
+
+function update(req, res){
+  console.log(req.params.id)
+  Post.findByIdAndUpdate(req.params.id).exec()
+  res.json('Item Updated')
 }

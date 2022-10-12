@@ -1,13 +1,15 @@
 import { Component } from 'react';
 import Footer from '../components/Footer/Footer';
-import PostForm from '../components/PostForm/PostForm';
+import PostForm from '../pages/PostForm/PostForm';
 import NavigationBar from '../components/NavigationBar/NavigationBar';
 import {Route, Routes} from 'react-router-dom'
 import CourseMenu from '../pages/CourseMenu/CourseMenu';
 import AuthPage from '../pages/AuthPage/AuthPage';
 import HomePage from '../pages/HomePage/HomePage';
+import DetailPage from '../pages/DetailPage/DetailPage';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import "bootstrap/dist/js/bootstrap.bundle.min";
 
 export default class App extends Component {
   state = {
@@ -50,6 +52,7 @@ export default class App extends Component {
             <Route path='' element={<HomePage/>}/>
             <Route path='/coursemenu' element={<CourseMenu posts={this.state.posts}/>}/>
             <Route path='/addpost' element={<PostForm/>}/>
+            <Route path='/course/:id' element={<DetailPage/>}/>
           </Routes>
         </>
           :
