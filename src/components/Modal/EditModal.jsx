@@ -11,8 +11,8 @@ export default function EditModal(props){
 
   return (
     <div>
-      <Button variant="primary" onClick={handleShow}>
-        Launch demo modal
+      <Button variant='secondary' onClick={handleShow}>
+        Update Course
       </Button>
 
       <Modal show={show} onHide={handleClose}>

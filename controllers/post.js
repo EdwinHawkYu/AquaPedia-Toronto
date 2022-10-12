@@ -39,6 +39,7 @@ function deletePost(req, res){
 
 function update(req, res){
   console.log(req.params.id)
-  Post.findByIdAndUpdate(req.params.id).exec()
+  console.log(req.body)
+  Post.findByIdAndUpdate(req.params.id, req.body).exec()
   res.json('Item Updated')
 }

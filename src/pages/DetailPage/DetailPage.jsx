@@ -67,10 +67,9 @@ export default function DetailPage(props){
           </ListGroup>
           <br/>
           <Button className='m-2' as={Link} to="">Book Course!</Button>
-          <Button onClick={()=>deletePost(postID.id)} type='submit' className='m-2'>
+          <Button variant='secondary' onClick={()=>deletePost(postID.id)} type='submit' className='m-2'>
             Delete Course
           </Button>
-          <Button className='m-2' as={Link} to={`/course/${postID.id}/edit`}>Edit Course</Button>
           <EditModal postID={postID.id}/>
         </Card.Body>
         </Card>            
