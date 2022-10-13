@@ -18,11 +18,13 @@ export default function Post(props){
             </Link>
           </Card.Title>
           <Card.Text>
-            Level: {props.post.level}
+            <b>Level:</b> {props.post.level}
             <br/>
-            Price: ${props.post.price}
+            <b>Course Description:</b> {props.post.description}
             <br/>
-            Date: {props.post.date}
+            <b>Price:</b> ${props.post.price}
+            <br/>
+            <b>Date:</b> {props.post.date}
           </Card.Text>
           <Button as={Link} to={link} variant='primary'>Registration!</Button>
         </Card.Body>

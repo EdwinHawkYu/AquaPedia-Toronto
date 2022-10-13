@@ -1,4 +1,4 @@
-import { useParams, Link} from "react-router-dom";
+import { useNavigate, useParams, Link} from "react-router-dom";
 import { useState, useEffect } from "react";
 import Button from 'react-bootstrap/Button'
 import Card from "react-bootstrap/Card";
@@ -7,13 +7,16 @@ import EditModal from "../../components/Modal/EditModal";
 
 export default function DetailPage(props){
 
+  const postID = useParams();
+  const navigate = useNavigate();
+
   const [post, setPost] = useState({
     name: '',
     level: '',
+    description: '',
     price: '',
     date: ''
   })
-  const postID = useParams();
 
   useEffect(()=>{
     async function getDetails(){
@@ -23,6 +26,7 @@ export default function DetailPage(props){
           setPost({
             name: data.name,
             level: data.level,
+            description: data.description,
             price: data.price,
             date: data.date
           })
@@ -40,6 +44,8 @@ export default function DetailPage(props){
       .then(result => {
         console.log(result)
       })
+
+    navigate('/coursemenu')
   }
 
   return(
@@ -53,7 +59,7 @@ export default function DetailPage(props){
           </Card.Title>
           <Card.Subtitle className="mb-2 text-muted">{post.level}</Card.Subtitle>
           <Card.Text>
-            Insert Description Here
+            {post.description}
           </Card.Text>
           <ListGroup>
             <ListGroup.Item>

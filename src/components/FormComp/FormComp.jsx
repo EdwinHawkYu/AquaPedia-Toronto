@@ -3,12 +3,13 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Container from "react-bootstrap/Container";
 
-export default class PostForm extends Component{
+export default class FormComp extends Component{
   state = {
-    name: '',
-    level: '',
-    price: '',
-    date: ''
+    name: this.props.post.name,
+    level: this.props.post.level,
+    description: this.props.post.description,
+    price: this.props.post.price,
+    date: this.props.post.date
   };
 
   handleChange = (e) => {
@@ -20,6 +21,7 @@ export default class PostForm extends Component{
     let optionBody = {
       name: this.state.name,
       level: this.state.level,
+      description: this.state.description,
       price: this.state.price,
       date: this.state.date
     }
@@ -37,6 +39,7 @@ export default class PostForm extends Component{
         this.setState({
           name: '',
           level: '',
+          description: '',
           price: '',
           date: ''
         })
@@ -53,7 +56,7 @@ export default class PostForm extends Component{
             <Form.Control
               type='name'
               name='name'
-              placeholder='Name'
+              value={this.state.name}
               onChange={this.handleChange}
               required
             />
@@ -61,15 +64,23 @@ export default class PostForm extends Component{
             <Form.Control
               type='level'
               name='level'
-              placeholder='Level'
+              value={this.state.level}
               onChange={this.handleChange}
               required
             />
+            <Form.Label>Description</Form.Label>
+            <Form.Control
+              type='description'
+              name='description'
+              value={this.state.description}
+              onChange={this.handleChange}
+              required
+            />            
             <Form.Label>Price</Form.Label>
             <Form.Control
               type='price'
               name='price'
-              placeholder='Price'
+              value={this.state.price}
               onChange={this.handleChange}
               required
             />
@@ -77,12 +88,11 @@ export default class PostForm extends Component{
             <Form.Control
               type='date'
               name='date'
-              placeholder='Date'
               onChange={this.handleChange}
               required
             />
             </Form.Group>            
-            <Button className="m-2" type='submit'>Edit!</Button>
+            <Button className="m-2" type='submit'>Save Changes!</Button>
           </Form>
         </Container>
       </div>

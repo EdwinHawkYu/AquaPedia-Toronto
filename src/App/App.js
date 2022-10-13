@@ -1,8 +1,7 @@
 import { Component } from 'react';
-import Footer from '../components/Footer/Footer';
-import PostForm from '../pages/PostForm/PostForm';
-import NavigationBar from '../components/NavigationBar/NavigationBar';
 import {Route, Routes} from 'react-router-dom'
+import NavigationBar from '../components/NavigationBar/NavigationBar';
+import PostForm from '../pages/PostForm/PostForm';
 import CourseMenu from '../pages/CourseMenu/CourseMenu';
 import AuthPage from '../pages/AuthPage/AuthPage';
 import HomePage from '../pages/HomePage/HomePage';
@@ -57,8 +56,7 @@ export default class App extends Component {
         </>
           :
           <AuthPage setUserInState={this.setUserInState}/>
-        }
-        <Footer/>        
+        }      
       </main>
     );
   }

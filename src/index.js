@@ -5,10 +5,10 @@ import App from './App/App';
 import { BrowserRouter as Router } from 'react-router-dom';
 
 ReactDOM.render(
-  <Router>
-    <React.StrictMode>
+  <React.StrictMode>
+    <Router>
         <App />
-      </React.StrictMode>
-    </Router>,
+    </Router>
+  </React.StrictMode>,
   document.getElementById('root')
 );

@@ -4,10 +4,12 @@ const Schema = mongoose.Schema
 const postSchema = new Schema({
   name: {type: String},
   img: {type: String},
+  description: {type: String},
   level: {type: String},
   location: {type: String},
   price: {type: Number},
-  date: {type: Date}
+  date: {type: Date},
+  user: {type: Schema.Types.ObjectId, ref: 'User'}
 },
   {
   timestamps: true

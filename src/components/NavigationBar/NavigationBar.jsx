@@ -4,9 +4,18 @@ import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 export default function NavigationBar(props) {
+  
+  const navigate = useNavigate();
+
+  function userLogout(){
+    console.log('Removing Token')
+    localStorage.removeItem('token')
+    navigate('/')
+  }
+  
   return (
     <Navbar bg="light" expand="lg">
       <Container fluid>
@@ -31,12 +40,12 @@ export default function NavigationBar(props) {
             </NavDropdown>
             <Nav.Link href="">Checkout</Nav.Link>
             {props.user ?
-              <Nav.Link href="">Logout</Nav.Link>
+              <Nav.Link href=''>Logout</Nav.Link>
               :
               <Nav.Link href="">Login</Nav.Link>
             }
           </Nav>
-          <Form className="d-flex">
+          {/* <Form className="d-flex">
             <Form.Control
               type="search"
               placeholder="Search"
@@ -44,7 +53,8 @@ export default function NavigationBar(props) {
               aria-label="Search"
             />
             <Button variant="outline-success">Search</Button>
-          </Form>
+          </Form> */}
+          <button className='btn-sm' onClick={userLogout}>LogOut</button>
         </Navbar.Collapse>
       </Container>
     </Navbar>
