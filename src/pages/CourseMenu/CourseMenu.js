@@ -21,7 +21,7 @@ export default function CourseMenu(props){
   return(
     <main className='CourseMenu'>
       <h2>Course Menu</h2>
-      <div className="d-flex">
+      <div className="d-flex flex-column">
         {props.posts.length ?
           // props.posts.map((p,idx) => <Post post={p} key={idx}/>)
           props.posts.map((p,idx) => <Post post={p} key={idx}/>)

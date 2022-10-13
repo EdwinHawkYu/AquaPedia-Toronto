@@ -1,5 +1,6 @@
 import { Component } from "react";
 import AddForm from "../../components/AddForm/AddForm";
+import { useNavigate } from "react-router-dom";
 
 export default class PostForm extends Component{
   state = {
