@@ -17,31 +17,30 @@ export default class PostForm extends Component{
 
   handleSubmit = async (e) =>{
     e.preventDefault();
-    let optionBody = {
-      name: this.state.name,
-      level: this.state.level,
-      description: this.state.description,
-      price: this.state.price,
-      date: this.state.date
+    try{
+      let optionBody = {
+        name: this.state.name,
+        level: this.state.level,
+        description: this.state.description,
+        price: this.state.price,
+        date: this.state.date
+      }
+      let jwt = localStorage.getItem('token')
+      let options = {
+        method: 'POST',
+        headers: {
+          'Content-Type':'application/json',
+          'Authorization': 'Bearer '+ jwt
+        },
+        body: JSON.stringify(optionBody)
+      }
+      const fetchResponse = await fetch('/api', options)
+      if (!fetchResponse.ok) throw new Error("Fetch failed - Bad request");
+
+    } catch (error){
+      console.log(error.message)
     }
-    let options = {
-      method: 'POST',
-      headers: {
-        'Content-Type':'application/json'
-      },
-      body: JSON.stringify(optionBody)
-    }
-    await fetch('/api', options)
-      .then(res => res.json())
-      .then(data => {
-        this.setState({
-          name: '',
-          level: '',
-          description: '',
-          price: '',
-          date: ''
-        })
-      })
+
   }
 
   render(){

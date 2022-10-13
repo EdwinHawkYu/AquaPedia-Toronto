@@ -49,9 +49,9 @@ export default class App extends Component {
         <>
           <Routes>
             <Route path='' element={<HomePage/>}/>
-            <Route path='/coursemenu' element={<CourseMenu posts={this.state.posts}/>}/>
-            <Route path='/addpost' element={<PostForm/>}/>
-            <Route path='/course/:id' element={<DetailPage/>}/>
+            <Route path='/coursemenu' element={<CourseMenu posts={this.state.posts} user={this.state.user}/>}/>
+            <Route path='/addpost' element={<PostForm user={this.state.user}/>}/>
+            <Route path='/course/:id' element={<DetailPage user={this.state.user}/>}/>
           </Routes>
         </>
           :

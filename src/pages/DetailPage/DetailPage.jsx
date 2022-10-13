@@ -15,7 +15,8 @@ export default function DetailPage(props){
     level: '',
     description: '',
     price: '',
-    date: ''
+    date: '',
+    user: ''
   })
 
   useEffect(()=>{
@@ -28,7 +29,8 @@ export default function DetailPage(props){
             level: data.level,
             description: data.description,
             price: data.price,
-            date: data.date
+            date: data.date,
+            user: data.user
           })
         })
     }
@@ -73,10 +75,16 @@ export default function DetailPage(props){
           </ListGroup>
           <br/>
           <Button className='m-2' as={Link} to="">Book Course!</Button>
-          <Button variant='secondary' onClick={()=>deletePost(postID.id)} type='submit' className='m-2'>
-            Delete Course
-          </Button>
-          <EditModal postID={postID.id}/>
+          {props.user._id === post.user ?
+            <>
+              <Button variant='secondary' onClick={()=>deletePost(postID.id)} type='submit' className='m-2'>
+                Delete Course
+              </Button>
+              <EditModal postID={postID.id}/>            
+            </>
+          :
+            <Button as={Link} to='/coursemenu' variant='secondary'>Return to Course Menu</Button>
+          }
         </Card.Body>
         </Card>            
       </div>

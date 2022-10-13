@@ -25,11 +25,12 @@ export default class FormComp extends Component{
       price: this.state.price,
       date: this.state.date
     }
+    let jwt = localStorage.getItem('token')
     let options = {
       method: 'PUT',
       headers: {
-        'Accept':'application/json',
-        'Content-Type':'application/json'
+        'Content-Type':'application/json',
+        'Authorization':'Bearer '+jwt
       },
       body: JSON.stringify(optionBody)
     }

@@ -3,7 +3,6 @@ const Schema = mongoose.Schema
 
 const postSchema = new Schema({
   name: {type: String},
-  img: {type: String},
   description: {type: String},
   level: {type: String},
   location: {type: String},

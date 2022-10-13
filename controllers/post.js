@@ -20,7 +20,17 @@ function index(req, res){
 
 function create(req, res){
   console.log('Creating')
-  Post.create(req.body, function(err, post){
+  console.log(req.body)
+  console.log(req.user._id)
+  Post.create({
+    name: req.body.name,
+    description: req.body.description,
+    level: req.body.level,
+    location: req.body.location,
+    price: req.body.price,
+    date: req.body.date,
+    user: req.user._id
+  }, function(err, post){
     res.status(200).json('ok')
   })
 }
