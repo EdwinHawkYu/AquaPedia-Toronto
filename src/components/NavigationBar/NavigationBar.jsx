@@ -33,12 +33,8 @@ export default function NavigationBar(props) {
               <NavDropdown.Item as={Link} to="/addpost">Add Course</NavDropdown.Item>
               <NavDropdown.Divider />
               <NavDropdown.Item as={Link} disabled>Coming Soon!</NavDropdown.Item>
-              <NavDropdown.Item as={Link} to="" disabled>Learn to Swim</NavDropdown.Item>
-              <NavDropdown.Item as={Link} to="" disabled>First Aid</NavDropdown.Item>
-              <NavDropdown.Item as={Link} to="" disabled>Lifeguarding</NavDropdown.Item>
-              <NavDropdown.Item as={Link} to="" disabled>Advanced Leadership Courses</NavDropdown.Item>
             </NavDropdown>
-            <Nav.Link href="">Checkout</Nav.Link>
+            <Nav.Link disabled>Checkout</Nav.Link>
             {props.user ?
               <Nav.Link href=''>Logout</Nav.Link>
               :

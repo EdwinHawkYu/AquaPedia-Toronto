@@ -19,6 +19,28 @@ export default function EditModal(props){
 
   const postID = useParams();
 
+  async function handleSubmit2(e){
+    e.preventDefault();
+    let optionBody = {
+      name: this.state.name,
+      level: this.state.level,
+      description: this.state.description,
+      price: this.state.price,
+      date: this.state.date
+    }
+    let jwt = localStorage.getItem('token')
+    let options = {
+      method: 'PUT',
+      headers: {
+        'Content-Type':'application/json',
+        'Authorization':'Bearer '+jwt
+      },
+      body: JSON.stringify(optionBody)
+    }
+    await fetch(`/api/course/${this.props.postID}/edit`, options)
+      .then(res => res.json())
+  }
+
   useEffect(()=>{
     async function getDetails(){
       await fetch('/api/course/'+postID.id)

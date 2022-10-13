@@ -6,25 +6,24 @@ export default function CourseMenu(props){
   const [allPosts, setAllPosts] = useState({})
 
   useEffect(()=>{
+    console.log('Update Course')
     async function getPosts(){
       await fetch('/api')
         .then(res => res.json())
         .then(posts => {
-          setAllPosts({allPosts: posts})
+          setAllPosts(posts)
         })
     }
-
     getPosts()
-
   }, [])
 
   return(
     <main className='CourseMenu'>
       <h2>Course Menu</h2>
       <div className="d-flex flex-column">
-        {props.posts.length ?
+        {allPosts.length ?
           // props.posts.map((p,idx) => <Post post={p} key={idx}/>)
-          props.posts.map((p,idx) => <Post post={p} key={idx}/>)
+          allPosts.map((p,idx) => <Post post={p} key={idx}/>)
           :
           <h2>No Posts!</h2>
         }
