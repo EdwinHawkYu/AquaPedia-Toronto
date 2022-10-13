@@ -45,6 +45,8 @@ export default class FormComp extends Component{
           date: ''
         })
       })
+    
+    this.props.navigateTo('/coursemenu')
   }
 
   render(){

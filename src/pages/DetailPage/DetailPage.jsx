@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import Button from 'react-bootstrap/Button'
 import Card from "react-bootstrap/Card";
 import ListGroup from 'react-bootstrap/ListGroup';
-import EditModal from "../../components/Modal/EditModal";
+import EditModal from "../../components/Modals/EditModal";
 
 export default function DetailPage(props){
 
@@ -54,7 +54,7 @@ export default function DetailPage(props){
     <main className="DetailPage">
       <h2>Details Pages </h2>
       <div className="d-flex justify-content-center">
-        <Card className='text-center' style={{ width: '28rem' }}>
+        <Card className='text-center' style={{ width: '30rem' }}>
         <Card.Body>
           <Card.Title>
             <h3>{post.name}</h3>

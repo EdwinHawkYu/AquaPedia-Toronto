@@ -8,7 +8,7 @@ export default function Post(props){
 
   return(
     <div className="post">
-      <Card style={{ width: '24rem' }}>
+      <Card className="shadow m-1" style={{ width: '24rem' }}>
         <Card.Img>
         </Card.Img>
         <Card.Body>

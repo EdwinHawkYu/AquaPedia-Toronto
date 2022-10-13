@@ -3,6 +3,7 @@ import Button from "react-bootstrap/Button";
 import FormComp from '../FormComp/FormComp';
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 export default function EditModal(props){
   const [show, setShow] = useState(false);
@@ -18,27 +19,10 @@ export default function EditModal(props){
   const handleShow = () => setShow(true);  
 
   const postID = useParams();
+  const navigate = useNavigate();
 
-  async function handleSubmit2(e){
-    e.preventDefault();
-    let optionBody = {
-      name: this.state.name,
-      level: this.state.level,
-      description: this.state.description,
-      price: this.state.price,
-      date: this.state.date
-    }
-    let jwt = localStorage.getItem('token')
-    let options = {
-      method: 'PUT',
-      headers: {
-        'Content-Type':'application/json',
-        'Authorization':'Bearer '+jwt
-      },
-      body: JSON.stringify(optionBody)
-    }
-    await fetch(`/api/course/${this.props.postID}/edit`, options)
-      .then(res => res.json())
+  function navigateTo(route){
+    navigate(route);
   }
 
   useEffect(()=>{
@@ -69,7 +53,7 @@ export default function EditModal(props){
           <Modal.Title>Modal heading</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <FormComp postID={props.postID} post={post}/>
+          <FormComp postID={props.postID} post={post} navigateTo={navigateTo}/>
         </Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={handleClose}>

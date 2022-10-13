@@ -1,0 +1,12 @@
+h2{
+  text-align: center;
+}
+
+.post-container{
+  display: grid;
+  justify-content: center;
+  grid-template-columns: 5;
+
+  
+
+}

@@ -1,6 +1,5 @@
 import { Component } from "react";
-import AddForm from "../../components/AddForm/AddForm";
-import { useNavigate } from "react-router-dom";
+import AddForm from "../AddForm/AddForm";
 
 export default class PostForm extends Component{
   state = {
@@ -40,7 +39,7 @@ export default class PostForm extends Component{
     } catch (error){
       console.log(error.message)
     }
-
+  this.props.navigateTo('/coursemenu')
   }
 
   render(){

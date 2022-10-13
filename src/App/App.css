@@ -1,5 +1,11 @@
 .App {
+  max-width: 100%;
   padding-bottom: 60px;
+  background-color: #fafaf2;
+}
+
+main{
+  height: max-content;
 }
 
 .App-logo {

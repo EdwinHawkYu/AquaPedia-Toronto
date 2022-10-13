@@ -1,13 +1,6 @@
 import { Form, Container, Button } from "react-bootstrap"
-import { useNavigate } from "react-router-dom"
-import { useEffect } from "react";
 
 export default function AddForm(props){
-  const navigate = useNavigate();
-
-  async function updateThings(){
-    await props.handleSubmit
-  }
 
   return(
     <div className="AddForm">
