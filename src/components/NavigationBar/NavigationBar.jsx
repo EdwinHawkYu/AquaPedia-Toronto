@@ -18,7 +18,7 @@ export default function NavigationBar(props) {
   }
   
   return (
-    <Navbar bg="primary" variant='dark' expand="lg">
+    <Navbar sticky='top' bg="primary" variant='dark' expand="lg">
       <Container fluid>
         <Navbar.Brand as={Link} to="/">
           ΛQЦΛPΣDIΛ
@@ -43,7 +43,9 @@ export default function NavigationBar(props) {
             {props.user ?
               <Button variant="outline-light" onClick={userLogout}>Logout</Button>
               :
-              <Navbar.Brand as={Link}>ΛQЦΛPΣDIΛ</Navbar.Brand>
+              <Navbar.Brand as={Link}>
+                <img src='./smIcon.png'/>
+              </Navbar.Brand>
             }
         </Navbar.Collapse>
       </Container>
