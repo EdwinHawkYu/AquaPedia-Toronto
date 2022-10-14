@@ -44,13 +44,13 @@ export default function EditModal(props){
 
   return (
     <div>
-      <Button variant='secondary' onClick={handleShow}>
+      <Button variant='info' onClick={handleShow}>
         Update Course
       </Button>
 
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title>Modal heading</Modal.Title>
+          <Modal.Title>Edit Post: {post.name}</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <FormComp postID={props.postID} post={post} navigateTo={navigateTo}/>

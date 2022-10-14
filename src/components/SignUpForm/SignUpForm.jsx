@@ -49,10 +49,11 @@ export default class SignUpForm extends Component {
   render() {
     const disable = this.state.password !== this.state.confirm;
     return (
-      <div>
-        <div className="form-container">
+      <div className="container-sm">
+        <div className="d-flex justify-content-center">
           <form autoComplete="off" onSubmit={this.handleSubmit}>
             <label>Name</label>
+            <div className="form-group">
             <input
               type="text"
               name="name"
@@ -60,15 +61,19 @@ export default class SignUpForm extends Component {
               onChange={this.handleChange}
               required
             />
+            </div>
             <label>Email</label>
-            <input
+            <div className="form-group">
+              <input
               type="email"
               name="email"
               value={this.state.email}
               onChange={this.handleChange}
               required
             />
+            </div>
             <label>Password</label>
+            <div className="form-group">
             <input
               type="password"
               name="password"
@@ -76,7 +81,9 @@ export default class SignUpForm extends Component {
               onChange={this.handleChange}
               required
             />
+            </div>
             <label>Confirm</label>
+            <div className="form-group">
             <input
               type="password"
               name="confirm"
@@ -84,7 +91,8 @@ export default class SignUpForm extends Component {
               onChange={this.handleChange}
               required
             />
-            <button type="submit" disabled={disable}>
+            </div>
+            <button className="btn btn-outline-secondary btn-lg w-100 mt-2" type="submit" disabled={disable}>
               SIGN UP
             </button>
           </form>

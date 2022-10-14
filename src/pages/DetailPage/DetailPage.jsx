@@ -77,10 +77,11 @@ export default function DetailPage(props){
           <Button className='m-2' as={Link} to="">Book Course!</Button>
           {props.user._id === post.user ?
             <>
-              <Button variant='secondary' onClick={()=>deletePost(postID.id)} type='submit' className='m-2'>
+              <Button variant='danger' onClick={()=>deletePost(postID.id)} type='submit' className='m-2'>
                 Delete Course
               </Button>
               <EditModal postID={postID.id}/>            
+              <Button className="mt-2" as={Link} to='/coursemenu' variant='secondary'>Return to Course Menu</Button>
             </>
           :
             <Button as={Link} to='/coursemenu' variant='secondary'>Return to Course Menu</Button>
