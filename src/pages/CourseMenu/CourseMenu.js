@@ -1,4 +1,5 @@
 import Post from "../../components/Post/Post"
+import Spinner from 'react-bootstrap/Spinner'
 import { useState, useEffect } from "react"
 import './CourseMenu.css'
 
@@ -20,12 +21,14 @@ export default function CourseMenu(props){
 
   return(
     <main className='CourseMenu'>
-      <h2>Course Menu</h2>
+      {/* <h2>Course Menu</h2> */}
       <div className="post-container">
         {allPosts.length ?
           allPosts.map((p,idx) => <Post post={p} key={idx}/>)
           :
-          <h2>No Posts!</h2>
+          <div>
+            <Spinner animation='border' variant='primary'/>
+          </div>
         }
       </div>
     </main>
