@@ -1,14 +1,12 @@
 # Project 4: MERN Full-Stack Application
-<!-- ![Banner]() -->
+![Banner](https://imgur.com/Nb5AYKU.png)
 <br>
 
 ## Introduction
 
 Welcome to AquaPedia, an application where users and companys can post their Aquatic and health care training courses.
+
 Inspired by the constant confusion users tend to find themselves when navigating through a city website and was just looking to register for a simple swimming lesson.
-
-
-<br>
 
 ## Tech Stack
 
@@ -25,17 +23,18 @@ Access the app through the link below:
 
 ## Features
 
-### Home Page
-<img src=''>
+### Course - Details Page
+<img src='https://imgur.com/obsdkBy.png'/>
 
 ### Edit Page
-<img src=''>
+<img src='https://imgur.com/Ws3H7Kb.png'/>
 
 ## Future enhancements
 
 1. Add booking feature to allow users to checkout and register for the courses automatically.
 2. Users will receive an email after booking is completed.
 3. Add a filter and search feature to the course menu page.
+4. Incorporate some CSS animations to home page and course menu.
 
 ## Project Tools
 

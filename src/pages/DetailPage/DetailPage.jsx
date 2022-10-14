@@ -66,7 +66,7 @@ export default function DetailPage(props){
           <ListGroup>
             <ListGroup.Item>
               <div className="fw-bold">Price:</div>
-              {post.price}
+              ${post.price}
             </ListGroup.Item>
             <ListGroup.Item>
               <div className="fw-bold">Course Date:</div>

@@ -1,5 +1,6 @@
 import { Component } from "react";
 import AddForm from "../AddForm/AddForm";
+import './PostForm.css'
 
 export default class PostForm extends Component{
   state = {
